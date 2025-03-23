@@ -1,0 +1,16 @@
+---
+configuration:
+  access_key:
+    name: Access Key
+    description: The access key from Picovoice Console (https://console.picovoice.ai/)
+  sensitivity:
+    name: Sensitivity
+    description: The sensitivity of wake word detection (0-1)
+  language:
+    name: Language
+    description: The language for wake word detection
+  debug_logging:
+    name: Debug Logging
+    description: Enable detailed logging for troubleshooting
+network:
+  10400/tcp: Wyoming Protocol port 

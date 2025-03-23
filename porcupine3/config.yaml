@@ -1,0 +1,26 @@
+---
+version: 3.0.0
+slug: porcupine3
+name: Porcupine Wake Word (v3)
+description: Wake word detection using the Wyoming protocol with Porcupine v3
+url: https://github.com/vash2695/wyoming-porcupine
+arch:
+  - amd64
+  - aarch64
+  - armv7
+init: false
+discovery:
+  - wyoming
+options:
+  access_key: ""
+  sensitivity: 0.5
+  language: en
+  debug_logging: false
+schema:
+  access_key: str
+  sensitivity: float(0,1)
+  language: list(en|es|fr|de)
+  debug_logging: bool
+ports:
+  "10400/tcp": null
+homeassistant: 2023.9.0 

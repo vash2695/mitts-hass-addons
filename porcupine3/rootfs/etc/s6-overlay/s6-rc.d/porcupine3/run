@@ -1,0 +1,25 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Start porcupine3 service
+# ==============================================================================
+cd /usr/src
+flags=()
+
+if bashio::config.true 'debug_logging'; then
+    flags+=('--debug')
+fi
+
+# Check for access key
+ACCESS_KEY=$(bashio::config 'access_key')
+if [[ -z "${ACCESS_KEY}" ]]; then
+    bashio::log.error "Missing access_key in configuration. Get one from https://console.picovoice.ai/"
+    exit 1
+fi
+
+exec .venv/bin/python3 -m wyoming_porcupine3 \
+    --uri 'tcp://0.0.0.0:10400' \
+    --access-key "${ACCESS_KEY}" \
+    --sensitivity "$(bashio::config 'sensitivity')" \
+    --language "$(bashio::config 'language')" \
+    ${flags[@]} 
