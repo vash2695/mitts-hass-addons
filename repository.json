@@ -9,7 +9,7 @@
       "name": "Porcupine Wake Word (v3)",
       "slug": "porcupine3",
       "description": "Wake word detection using the Wyoming protocol with Porcupine v3",
-      "url": "https://github.com/vash2695/mitts-hass-addons/tree/main/porcupine3"
+      "url": "https://github.com/vash2695/mitts-hass-addons/tree/master/porcupine3"
     }
   ]
 }
