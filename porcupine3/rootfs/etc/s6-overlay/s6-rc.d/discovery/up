@@ -1,0 +1,12 @@
+#!/command/with-contenv bashio
+# ==============================================================================
+# Start discovery service
+# ==============================================================================
+readonly SUPERVISOR_API="http://supervisor"
+readonly PAYLOAD='{"service":"wyoming","host":"REPLACE.local","port":10400,"type":"_wyoming._tcp.local.","properties":{"type":"wake"}}'
+
+# Register with discovery service
+if ! bashio::api.supervisor POST "/services/discovery" "${PAYLOAD}"; then
+    bashio::log.error "Failed to register with discovery service"
+    bashio::exit.nok
+fi 

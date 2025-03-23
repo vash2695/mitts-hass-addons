@@ -1,6 +1,14 @@
 ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
+# Add-on metadata
+LABEL \
+    io.hass.name="Porcupine Wake Word (v3)" \
+    io.hass.description="Wake word detection using the Wyoming protocol with Porcupine v3" \
+    io.hass.version="3.0.0" \
+    io.hass.type="addon" \
+    io.hass.arch="amd64,aarch64,armv7"
+
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 

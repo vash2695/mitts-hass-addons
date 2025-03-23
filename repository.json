@@ -1,5 +1,15 @@
 {
   "name": "Mitt's HASS Add-Ons",
   "url": "https://github.com/vash2695/mitts-hass-addons",
-  "maintainer": "vash2695"
+  "maintainer": "vash2695",
+  "slug": "mitts_repository",
+  "homeassistant": "2023.9.0",
+  "addons": [
+    {
+      "name": "Porcupine Wake Word (v3)",
+      "slug": "porcupine3",
+      "description": "Wake word detection using the Wyoming protocol with Porcupine v3",
+      "url": "https://github.com/vash2695/mitts-hass-addons/tree/main/porcupine3"
+    }
+  ]
 }
